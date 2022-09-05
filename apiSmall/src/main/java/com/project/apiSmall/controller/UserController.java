@@ -1,6 +1,9 @@
 package com.project.apiSmall.controller;
 
+import com.project.apiSmall.dataTransfer.UserDTO;
 import com.project.apiSmall.domain.UserDetail;
+import com.project.apiSmall.domain.UserRest;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +16,12 @@ public class UserController {
     }
 
     @PostMapping
-    public  String createUser(@RequestBody UserDetail userdetails){
-        return "createUser was called";
+    public UserRest createUser(@RequestBody UserDetail userdetails){
+
+        UserRest uRest = new UserRest();
+        UserDTO uDTO = new UserDTO();
+        BeanUtils.copyProperties(userdetails,uDTO);
+
+        return null;
     }
 }

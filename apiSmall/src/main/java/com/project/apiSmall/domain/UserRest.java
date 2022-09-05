@@ -3,11 +3,11 @@ package com.project.apiSmall.domain;
 import lombok.Data;
 
 @Data
-public class UserDetail {
-    private String name;
+public class UserRest {
+    private String userId;
+    private String firstName;
     private String surname;
     private String email;
-    private String password;
 
-    public UserDetail(){}
+    public UserRest(){}
 }
