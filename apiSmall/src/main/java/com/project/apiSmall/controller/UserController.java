@@ -3,12 +3,17 @@ package com.project.apiSmall.controller;
 import com.project.apiSmall.dataTransfer.UserDTO;
 import com.project.apiSmall.domain.UserDetail;
 import com.project.apiSmall.domain.UserRest;
+import com.project.apiSmall.service.UserServicesImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("users")
 public class UserController {
+
+    @Autowired
+    UserServicesImpl uServicesImpl;
 
     @GetMapping
     public  String getUser(){
@@ -20,8 +25,10 @@ public class UserController {
 
         UserRest uRest = new UserRest();
         UserDTO uDTO = new UserDTO();
+        UserDTO uDTO2 = uServicesImpl.createUser(uDTO);
         BeanUtils.copyProperties(userdetails,uDTO);
+        BeanUtils.copyProperties(uDTO2,uRest);
 
-        return null;
+        return uRest;
     }
 }
