@@ -25,8 +25,8 @@ public class UserController {
 
         UserRest uRest = new UserRest();
         UserDTO uDTO = new UserDTO();
-        UserDTO uDTO2 = uServicesImpl.createUser(uDTO);
         BeanUtils.copyProperties(userdetails,uDTO);
+        UserDTO uDTO2 = uServicesImpl.createUser(uDTO);
         BeanUtils.copyProperties(uDTO2,uRest);
 
         return uRest;
