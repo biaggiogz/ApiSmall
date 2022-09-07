@@ -20,8 +20,6 @@ public class UserServicesImpl implements UserService {
         UserEntity userE = new UserEntity();
         BeanUtils.copyProperties(userdto,userE);
 
-
-
         userE.setEncryptedPassword("test");
         userE.setUserId("testID");
 

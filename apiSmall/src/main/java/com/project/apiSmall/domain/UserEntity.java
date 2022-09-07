@@ -19,13 +19,13 @@ public class UserEntity implements Serializable {
     @Column(nullable=false)
     private String userId;
 
-    @Column(nullable=false)
+    @Column(nullable=false,length = 50)
     private String name ;
 
-    @Column(nullable=false)
+    @Column(nullable=false, length = 50)
     private String surname;
 
-    @Column(nullable=false)
+    @Column(nullable=false, length = 120, unique = true)
     private String email;
 
     @Column(nullable=false)
@@ -36,6 +36,6 @@ public class UserEntity implements Serializable {
     @Column(nullable=false)
     private Boolean emailVerificationStatus = false;
 
-    @OneToMany(mappedBy="userDetails", cascade=CascadeType.ALL)
-    private List<AddressEntity> addresses;
+//    @OneToMany(mappedBy="userDetails", cascade=CascadeType.ALL)
+//    private List<AddressEntity> addresses;
 }
