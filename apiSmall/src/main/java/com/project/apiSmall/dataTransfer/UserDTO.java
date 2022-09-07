@@ -13,8 +13,8 @@ public class UserDTO implements Serializable {
     private  static final long serialVersionUID = 6835192601898364280L;
     private long id;
     private String userId;
-    private String firstName;
-    private String lastName;
+    private String name;
+    private String surname;
     private String email;
     private String password;
     private String encryptedPassword;
