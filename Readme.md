@@ -7,15 +7,21 @@ Finally, perform the data inputs verifications using test tools such as __Junit 
 
 ----------------------
 #### Phase1:
-* Star project defining the basic path of an Api ResT
+* Star project defining the basic path of an Api Rest
 * Use the post tool with the intention of seeing the logs when calling a path
 * Proceed to create the model classes from input to output of a user's data
 * Create the interfaces to define the signatures that are implemented in the ServiceUser class
 * Add Runtime exepction in case of duplicate errors, one registration by one user
+
 ```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'default' , 'themeVariables': {'commitLabelColor': '#ff0000','commitLabelBackground': '#00fff3'} } }%%
 gitGraph
        commit id: "start project"
-       branch phase1
+       branch phase1 order:3
+       checkout phase1
        commit id: "create user repository"
        commit id: "small changes"
+       branch preproduction
+       checkout preproduction
+       commit id: "Update Documentation"
 ```
